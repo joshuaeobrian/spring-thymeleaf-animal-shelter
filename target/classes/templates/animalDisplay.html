@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="//www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Noto+Serif|Slabo+27px" rel="stylesheet"/>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" th:href="@{/css/stylesheet.css}" href="../static/css/stylesheet.css"/>
+	<link rel="stylesheet" th:href="@{/css/animalsStyle.css}" href="../static/css/animalsStyle.css"/>
+
+	<title>Title</title>
+</head>
+<body>
+<div id="top-nav"><nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" id="menu-slide" href="#">Animal Shelter</a>
+		</div>
+		<ul class="nav navbar-nav navbar-right">
+			<li>
+				<select id="species-drop" class="form-control">
+					<option value="0">All Species</option>
+					<option th:each="species : ${species}" th:value="${species.id}" th:text="${species.speciesType}">Cat</option>
+				</select>
+			</li>
+			<li>
+				<input type="search" class="form-control"/>
+			</li>
+
+			<li><a href="#"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+			<li><a href="#"><span class="glyphicon glyphicon-user"></span> Edit Account</a></li>
+			<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+		</ul>
+	</div>
+</nav></div>
+
+	<nav id="left-nav" class="clearfix">
+		<ul>
+			<li><button class="btn" id="showAnimals">Show Animals</button></li>
+			<li><button class="btn" id="create">Create Animal</button></li>
+		</ul>
+	</nav>
+
+	<div class="container display" id = "main-container">
+		<div th:each="animal : ${animals}" class="content animal-content col-sm-5">
+				<h2 th:text="${animal.name}">Pablo</h2>
+				<h5>ID: <span class="animal-id" th:text="${animal.id}"></span></h5>
+				<div class="animal col-sm-6">
+					<ul>
+						<li>Species: <span th:text="${animal.species}">Cat</span></li>
+						<li>  Breed: <span th:text="${animal.breed}">Maine Coon</span></li>
+						<li>    Age: <span th:text="${animal.age}">2 </span> years</li>
+					</ul>
+				</div>
+				<div class="animal-image-container col-sm-5 ">
+					<img class="animal-image img-circle img-responsive" th:src="@{'/images/'+ ${animal.image}+'.jpeg'}" />
+				</div>
+			<div class="animal-buttons col-sm-12">
+				<button class="btn btn-info" type="submit">Details</button>
+				<button class="btn btn-danger" type="submit">Remove</button>
+			</div>
+		</div>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="../static/js/menu.js" th:src="@{/js/menu.js}"></script>
+<script src="../static/js/showAnimals.js" th:src="@{/js/showAnimals.js}"></script>
+
+</body>
+</html>

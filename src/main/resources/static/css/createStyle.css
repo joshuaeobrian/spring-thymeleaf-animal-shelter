@@ -1,0 +1,31 @@
+.image{
+	width: 200px;
+	height: 200px;
+	margin: 30px;
+	}
+.animal-form{
+	height:25em;
+	}
+
+/*.content{*/
+	/*background: #fff;*/
+	/*}*/
+/*.content{*/
+	/*background: #fff;*/
+	/*}*/
+.form-input{
+	margin: 1em 0;
+	padding: .5em 0;
+	}
+.animal-image{
+	width: 100px;
+	width: 25%;
+	height: 25%;
+	margin: auto;
+	}
+.container{
+	margin:5% auto;
+	height: 500px;
+	background: #FFFCE8;
+	
+	}

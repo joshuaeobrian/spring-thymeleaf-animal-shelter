@@ -1,0 +1,46 @@
+
+.container{
+	width: 60%;
+	margin: 8% auto;
+	background: #FFFCE8;
+	
+	}
+.detail-content{
+	width: 70%;
+	margin: 3% auto;
+	background: #FFFCE8;
+	
+	}
+.detail-content h2{
+	margin-top:0;
+	}
+.animal-buttons{
+	float: right;
+	z-index: 1;
+	}
+.detail-content ul li{
+	list-style-type: none;
+	line-height: 1.5;
+	}
+.detail-content input{
+	width: 100%;
+	line-height: 1.5;
+	}
+.content{
+	width: 90%;
+	height: 20em;
+	margin:0;
+	margin-top: 2%;
+	padding: 1em;
+	}
+.animal-image-container{
+	margin-top: 3%;
+	height:200px;
+	width:200px;
+	padding:0;
+	}
+.animal-image{
+	height:200px;
+	width:200px;
+	border-radius: 50%;
+	}

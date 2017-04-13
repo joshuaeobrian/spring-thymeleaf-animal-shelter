@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="//www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Noto+Serif|Slabo+27px" rel="stylesheet"/>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" th:href="@{/css/stylesheet.css}" href="../static/css/stylesheet.css"/>
+	<link rel="stylesheet" th:href="@{/css/createStyle.css}" href="../static/css/createStyle.css"/>
+
+	<title>Add Animal</title>
+</head>
+<body>
+<div class="main">
+	<div id="top-nav"><nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" id="menu-slide" href="#">Animal Shelter</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><span class="glyphicon glyphicon-user"></span> Edit Account</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+			</ul>
+		</div>
+	</nav></div>
+	<nav id="left-nav" class="clearfix">
+		<ul>
+			<li><button class="btn" id="showAnimals">Show Animals</button></li>
+			<li><button class="btn" id="create">Create Animal</button></li>
+		</ul>
+	</nav>
+	<div id="top-bar">
+
+	</div>
+	<div class="container">
+
+		<div class="content">
+
+			<form>
+				<h2>Add New Animal</h2>
+				<div class="animal-form form-input col-sm-6">
+
+						<input type="text" id="name" class="form-input col-sm-10" placeholder="Animal Name"/>
+						<select id="species-creation" class="form-input col-sm-4">
+							<option th:each="species : ${species}" th:value="${species.id}" th:text="${species.speciesType}">Cat</option>
+						</select>
+						<select id="breed" class="form-input col-sm-5">
+							<option>Other</option>
+						</select>
+					<select id="gender-creation" class="form-input col-sm-4">
+						<option th:each="gender : ${gender}" th:value="${gender.id}" th:text="${gender.gender}">Cat</option>
+					</select>
+						<input type="text" id="age" class="form-input col-sm-10" placeholder="age"/>
+
+
+						<textarea type="text" id="description" class="form-input col-sm-10" placeholder="Description"></textarea>
+				</div>
+				<div class="image col-sm-6">
+
+					<input type="file" id="animal-image"/>
+					<img id="the-image" src=""/>
+
+
+				</div>
+				<button type="submit" class="btn btn-success col-sm-10" id="submit">Submit</button>
+			</form>
+
+		</div>
+		<label id="success"></label>
+	</div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="../static/js/menu.js" th:src="@{/js/menu.js}"></script>
+<script src="../static/js/form.js" th:src="@{/js/form.js}"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+.container{
+	margin-top: 5%;
+	
+	}
+
+.content{
+	margin: 1em;
+	background: #FFFCE8;
+	border: 1px solid #3e363f;
+	}
+.animal ul li{
+	list-style-type: none;
+	padding:0;
+	}
+
+animal-image{
+	
+	width: 100px;
+	height: 100px;
+	border-radius:50%;
+	}
